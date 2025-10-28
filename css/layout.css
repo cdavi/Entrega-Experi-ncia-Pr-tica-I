@@ -1,0 +1,64 @@
+/* Layout principal com CSS Grid */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main (flexível), Footer */
+    min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-4) 0;
+}
+
+/* Header (usando Flexbox para alinhamento interno) */
+header {
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-2) 0;
+    grid-row: 1;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+header .logo img {
+    max-height: 50px; /* Ajusta altura do logo */
+}
+
+/* Main (conteúdo principal) */
+main {
+    grid-row: 2;
+}
+
+/* Footer (usando Flexbox) */
+footer {
+    grid-row: 3;
+    background-color: var(--color-neutral-dark);
+    color: var(--color-white);
+    padding: var(--spacing-3) 0;
+    text-align: center;
+}
+
+/* Sistema de Grid de 12 Coluna */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-3);
+}
+
+/*Colunas*/
+.col-span-12 { grid-column: span 12; }
+.col-span-8 { grid-column: span 8; }
+.col-span-6 { grid-column: span 6; }
+.col-span-4 { grid-column: span 4; }
+.col-span-3 { grid-column: span 3; }
